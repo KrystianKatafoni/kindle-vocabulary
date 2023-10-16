@@ -1,0 +1,25 @@
+#Spring files and persistence
+spring:
+  servlet:
+    multipart:
+      max-file-size: "1MB"
+      max-request-size: "1MB"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/kindlevocabulary"
+    username: "user"
+    password: "pass"
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: "classpath:liquibase-changeLog.xml"
+
+#Binary data
+binary:
+  defaultStorage: "LOCAL_STORAGE"
+  localStoragePath: "C:/tmp/"
+  temporaryDatabaseFilename: "tmp"
+  temporaryDatabaseFileExtension: ".db"
